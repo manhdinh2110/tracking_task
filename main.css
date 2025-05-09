@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+
+
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .login-container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: 0.2s;
+  }
+
+  .form-group input:focus {
+    border-color: #74ebd5;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(116, 235, 213, 0.3);
+  }
+
+  .btn-login {
+    width: 100%;
+    background: #4A90E2;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .btn-login:hover {
+    background: #357ABD;
+  }
+
+  .login-footer {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  .login-footer a {
+    color: #4A90E2;
+    text-decoration: none;
+  }
+
+  .login-footer a:hover {
+    text-decoration: underline;
+  }
+
+  .logo-container img {
+max-width: 300px; 
+align-self: flex-start; /* đẩy logo lên đầu khối cha */
+
+width: 100%;
+height: auto;
+}
+.login-wrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 80px; /* Tạo khoảng cách giữa logo và form */
+min-height: 100vh;
+padding: 40px;
+}
