@@ -29,7 +29,7 @@
 
   .login-container h2 {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
     font-size: 28px;
     color: #333;
   }
@@ -94,16 +94,24 @@
 
   .logo-container img {
 max-width: 300px; 
-align-self: flex-start; /* đẩy logo lên đầu khối cha */
-
+display:100px;
 width: 100%;
 height: auto;
+margin-right: 80px;
 }
+
+
+.login-container{
+
+  margin-top: 100px;
+  margin-right: 100px;
+
+}
+
 .login-wrapper {
 display: flex;
 align-items: center;
-justify-content: center;
-gap: 80px; /* Tạo khoảng cách giữa logo và form */
+justify-content: 200px;
 min-height: 100vh;
 padding: 40px;
 }
