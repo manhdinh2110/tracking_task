@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Music 🎵</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
+    }
+
+    h1 {
+      text-align: center;
+      color: #ec407a;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+
+    .music-list {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .song {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .song:last-child {
+      border-bottom: none;
+    }
+
+    .song-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .song-info i {
+      color: #ec407a;
+      font-size: 18px;
+    }
+
+    .song-title {
+      font-size: 15px;
+      color: #333;
+    }
+
+    audio {
+      width: 200px;
+      height: 30px;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .back:hover {
+      color: #ec407a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>MY LOVE MUSIC 🎶</h1>
+
+  <div class="music-list">
+
+    <div class="song">
+      <div class="song-info">
+        <i class="fa-solid fa-music"></i>
+        <div class="song-title">Bài hát 1</div>
+      </div>
+      <audio controls src="music/roitoilun.mp3"></audio>
+    </div>
+
+    <div class="song">
+      <div class="song-info">
+        <i class="fa-solid fa-music"></i>
+        <div class="song-title">Bài hát 2</div>
+      </div>
+      <audio controls src="music/song2.mp3"></audio>
+    </div>
+
+    <div class="song">
+      <div class="song-info">
+        <i class="fa-solid fa-music"></i>
+        <div class="song-title">Bài hát 3</div>
+      </div>
+      <audio controls src="music/song3.mp3"></audio>
+    </div>
+
+  </div>
+
+  <a class="back" href="demo.html">← Quay lại</a>
+
+</body>
+</html>

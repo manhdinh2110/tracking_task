@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thư Gửi Em 💌</title>
+
+  <style>
+    body {
+      background: #fdf2f8;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .letter {
+      background: white;
+      max-width: 700px;
+      width: 100%;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      line-height: 1.9;
+      color: #333;
+    }
+
+    .letter h1 {
+      text-align: center;
+      color: #ec407a;
+      margin-bottom: 30px;
+    }
+
+    #letterText {
+      font-size: 16px;
+      white-space: normal;
+      min-height: 200px;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 30px;
+      font-weight: 600;
+      color: #ec407a;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .signature.show {
+      opacity: 1;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .back:hover {
+      color: #ec407a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="letter">
+    <h1>Gửi Em 💖</h1>
+
+    <!-- Nội dung thư sẽ hiện ra tại đây -->
+    <div id="letterText"></div>
+
+    <div class="signature" id="sign">
+      — MY LOVE —
+    </div>
+
+    <a class="back" href="demo.html">← Quay lại</a>
+  </div>
+
+  <script>
+    const text = `Em à,
+
+Anh viết những dòng này để lưu lại cảm xúc của anh
+trong những ngày chúng ta ở bên nhau.
+
+Cảm ơn em vì đã đến, đã ở lại
+và đã trở thành một phần rất quan trọng trong cuộc sống của anh.
+
+Mong rằng chúng ta sẽ còn đi cùng nhau thật lâu...`;
+
+    let index = 0;
+    const speed = 60; // tốc độ gõ chữ (ms)
+
+    function typeText() {
+      if (index < text.length) {
+        const char = text[index] === "\n" ? "<br>" : text[index];
+        document.getElementById("letterText").innerHTML += char;
+        index++;
+        setTimeout(typeText, speed);
+      } else {
+        // Hiện chữ ký khi gõ xong
+        document.getElementById("sign").classList.add("show");
+      }
+    }
+
+    typeText();
+  </script>
+
+</body>
+</html>
