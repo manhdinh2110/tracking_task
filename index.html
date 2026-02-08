@@ -1,59 +1,217 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="main.css">
-  <title>Tinh iuu tui minh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Login</title>
+
+  <style>
+    /* body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    } */
+body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Segoe UI', sans-serif;
+
+  background-color: #fdf2f8;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 24 24'%3E%3Cpath fill='%23ec407a' fill-opacity='0.02' d='M12 21s-6.7-4.35-9.33-7.13C.9 11.8 1 8.75 3.05 6.7c1.9-1.9 4.98-1.6 6.95.45L12 9.15l2-2c1.97-2.05 5.05-2.35 6.95-.45 2.05 2.05 2.15 5.1.38 7.17C18.7 16.65 12 21 12 21z'/%3E%3C/svg%3E");
+
+  background-repeat: repeat;
+}
+
+
+
+
+    .login-box {
+      background: white;
+      width: 320px;
+      padding: 30px 25px;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    /* .login-box h1 {
+      margin-bottom: 10px;
+      color: #ec407a;
+      letter-spacing: 2px;
+    }
+
+    .login-box p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    } */
+.login-box h1 {
+  color: #ec407a;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.login-box p {
+  color: #666;
+  font-size: 14px;
+}
+
+    /* Hiển thị mật khẩu */
+    .display {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #ec407a;
+    }
+
+    .dot.active {
+      background: #ec407a;
+    }
+
+    /* Bàn phím số */
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .key {
+      height: 60px;
+      border-radius: 12px;
+      background: #fce7f3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 600;
+      color: #ec407a;
+      cursor: pointer;
+      transition: transform 0.1s, background 0.2s;
+      user-select: none;
+    }
+
+    .key:hover {
+      background: #f9a8d4;
+      color: white;
+    }
+
+    .key:active {
+      transform: scale(0.95);
+    }
+
+    .key.action {
+      background: #eee;
+      color: #555;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 12px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="login-wrapper">
 
-    <div class="logo-container">
-        <img src="images/logo.png" alt="Logo RitaVõ">
-      </div>
-    </div>
-<div class="login-container">
-  <h2>Đăng Nhập</h2>
-    <div class="form-group">
-      <label for="email">Mã đăng nhập / User ID</label>
-      <input type="text" id="email" name="email" placeholder="Nhập email hoặc username" required>
-    </div>
-    <div class="form-group">
-      <label for="password">Mật khẩu / Password</label>
-      <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
-    </div>
-    <button type="submit" class="btn-login" onclick="login()">Đăng Nhập</button>
+  <div class="login-box">
+    <h1>DINH💖NGAN</h1>
+<p>Chờ đón bất ngờ nha ✨</p>
 
-  <div class="login-footer">
-    <p>Chưa có tài khoản? <a href="#">Đăng ký ngay</a></p>
+    <p>Nhập mật mã</p>
+
+    <!-- Hiển thị số đã nhập -->
+    <div class="display">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <!-- Bàn phím số -->
+    <div class="keypad">
+      <div class="key" onclick="press(1)">1</div>
+      <div class="key" onclick="press(2)">2</div>
+      <div class="key" onclick="press(3)">3</div>
+      <div class="key" onclick="press(4)">4</div>
+      <div class="key" onclick="press(5)">5</div>
+      <div class="key" onclick="press(6)">6</div>
+      <div class="key" onclick="press(7)">7</div>
+      <div class="key" onclick="press(8)">8</div>
+      <div class="key" onclick="press(9)">9</div>
+      <div class="key action" onclick="clearAll()">C</div>
+      <div class="key" onclick="press(0)">0</div>
+      <div class="key action" onclick="backspace()">←</div>
+    </div>
+
+    <div class="error" id="error">Cố lên 1 lần nữa thuii</div>
   </div>
-  <div class="login-footer">
-    <p>Developed by  <br><a href="#">MyItai</a>    </p>
-  </div>
-</div>
-<script>
-function login() {
-  var email = document.getElementById('email').value.trim();
-  var password = document.getElementById('password').value.trim();
 
-  // Kiểm tra nếu chưa nhập đủ thông tin
-  if (email === "" || password === "") {
-    alert("Vui lòng nhập đầy đủ thông tin!");
-    return;
-  }
+  <script>
+    const correctPassword = "789123"; // đổi mật mã tại đây
+    let input = "";
 
-  // Kiểm tra thông tin đăng nhập
-  if (email === "Admin" && password === "1") {
-    window.location.href = "demo.html";
-  } else {
-    alert("Email hoặc mật khẩu không đúng!");
-  }
-}
+    function press(num) {
+      if (input.length >= 6) return;
+
+      input += num;
+      updateDots();
+
+      if (input.length === 6) {
+        checkPassword();
+      }
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll(".dot");
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index < input.length);
+      });
+    }
+
+    function clearAll() {
+      input = "";
+      updateDots();
+      hideError();
+    }
+
+    function backspace() {
+      input = input.slice(0, -1);
+      updateDots();
+      hideError();
+    }
+
+    function checkPassword() {
+      if (input === correctPassword) {
+        window.location.href = "demo.html"; // trang sau khi đăng nhập
+      } else {
+        document.getElementById("error").style.display = "block";
+        setTimeout(clearAll, 800);
+      }
+    }
+
+    function hideError() {
+      document.getElementById("error").style.display = "none";
+    }
   </script>
 
 </body>
 </html>
-

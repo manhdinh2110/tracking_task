@@ -1,0 +1,61 @@
+body {
+  background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+}
+
+.gallery-title {
+  color: #ec407a;
+  margin-bottom: 30px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal */
+#imgModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#imgModal.show {
+  display: flex;
+}
+
+#modalImg {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+.images img {
+  max-width: 180px;   /* giới hạn chiều rộng */
+  max-height: 180px;  /* giới hạn chiều cao */
+  width: auto;
+  height: auto;
+}
